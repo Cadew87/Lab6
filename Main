@@ -1,0 +1,27 @@
+def encode(value):
+    num = ""
+    for i in range(len(value)):
+        if value[i] == "7" or value[i] == "8" or value[i] == "9":
+            val = int(value[i])-10
+        else:
+            val = int(value[i])
+        new = str(3 + val)
+        num += new
+    return num
+
+if __name__ == "__main__":
+    m =True
+    nopas = True
+    while m == True:
+        print("Menu:\n-------------\n1. Encoder\n2. Decoder\n3. Quit\n")
+        numb = input("Please enter an option: ")
+        if nopas == True:
+            pas = input("Please enter your password to encode: ")
+            nopas = False
+        if numb == "1":
+            print("Your password has been encoded and stored!\n")
+            pas = encode(pas)
+        elif numb == "3":
+            m = False
+        else:
+            print("Incorrect input\n")
