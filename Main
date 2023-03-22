@@ -8,6 +8,16 @@ def encode(value): #Cade Whitaker (on ufl account)
         new = str(3 + val)
         num += new
     return num
+def decode(value): #Cade Whitaker (on gmail account)
+    num = ""
+    for i in range(len(value)):
+        if value[i] == "0" or value[i] == "1" or value[i] == "2":
+            val = int(value[i])+10
+        else:
+            val = int(value[i])
+        new = str(-3 + val)
+        num += new
+    return num
 
 if __name__ == "__main__":
     m =True
@@ -21,6 +31,8 @@ if __name__ == "__main__":
         if numb == "1":
             print("Your password has been encoded and stored!\n")
             pas = encode(pas)
+        elif numb == "2":
+            print(f"The encoded password is {pas}, and the original password is {decode(pas)}.\n")
         elif numb == "3":
             m = False
         else:
